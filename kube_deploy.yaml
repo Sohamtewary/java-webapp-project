@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loksai-eta-deploy
+  name: soham-eta-deploy
   labels:
-    app: loksai-eta-deploy-lbl
+    app: soham-eta-deploy-lbl
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: loksai-eta-app
+      app: soham-eta-app
   template:
     metadata:
       labels:
-        app: loksai-eta-app
+        app: soham-eta-app
     spec:
       containers:
-      - name: loksai-eta-container
-        image: loksaieta/pl-kdeploy_demo_app
+      - name: soham-eta-container
+        image: 9733562315/k8deploy_demo_app
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: loksai-eta-np-service
+  name: soham-eta-np-service
   labels:
-    app: loksai-eta-app
+    app: soham-eta-app
 spec:
   selector:
-    app: loksai-eta-deploy-lbl
+    app: soham-eta-deploy-lbl
 
   type: NodePort
   ports:
