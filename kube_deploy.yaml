@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: soham-eta-deploy
   labels:
-    app: soham-eta-deploy-lbl
+    app: soham-eta-app
 spec:
   replicas: 3
   selector:
@@ -28,7 +28,7 @@ metadata:
     app: soham-eta-app
 spec:
   selector:
-    app: soham-eta-deploy-lbl
+    app: soham-eta-app
 
   type: NodePort
   ports:
